@@ -1,0 +1,59 @@
+# # PostgreSQL. Versions 9.1 and up are supported.
+# #
+# # Install the pg driver:
+# #   gem install pg
+# # On OS X with Homebrew:
+# #   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+# # On OS X with MacPorts:
+# #   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
+# # On Windows:
+# #   gem install pg
+# #       Choose the win32 build.
+# #       Install PostgreSQL and put its /bin directory on your path.
+# #
+# # Configure Using Gemfile
+# # gem 'pg'
+# #
+# development:
+#   adapter: mysql2
+#   encoding: utf8
+#   database: covid
+#   username: root
+#   host: 127.0.0.1
+#   port: 3306
+# # default: &default
+# #   adapter: postgresql
+# #   encoding: unicode
+
+# #   database: <%=  'easychallo' %>
+# #   username: <%=  'postgres' %>
+# #   password: <%=  'postgres' %>
+# #   host: <%=  'localhost' %>
+
+# #   # Try the following in e.g., irb or the rails console to see additional
+# #   # environment variable mappings implicit in the 'pg' gem
+# #   # > require 'pg'
+# #   # > PG::Connection.conndefaults()
+
+# #   # For details on connection pooling, see Rails configuration guide
+# #   # http://guides.rubyonrails.org/configuring.html#database-pooling
+# #   pool: <%= ENV.fetch("PG_POOL_SIZE") { 5 } %>
+
+# # development:
+# #   <<: *default
+
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+production:
+  adapter: sqlite3
+  database: db/production.sqlite3
+  pool: 5
+  timeout: 5000
